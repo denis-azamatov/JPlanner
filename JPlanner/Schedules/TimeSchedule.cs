@@ -6,7 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DA.JPlanner.Schedules
 {
-    public class TimeSchedule<T> : Schedule<ITimeJob>
+    
+    public class TimeSchedule<T> : Schedule<T> where T : ITimeJob
     {
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly AutoResetEvent _autoResetEvent;
